@@ -2,17 +2,9 @@ require('./config/config.js');
 
 const express = require('express')
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser')
-
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(require('./routes/usuario'))
-
-app.get('/', function(req, res) {
-    res.json('Hello World')
-})
+app.use(require('./routes/index'))
 
 mongoose.connect(process.env.URLDB, {
     useNewUrlParser: true,
