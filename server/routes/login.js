@@ -52,7 +52,7 @@ async function verify(token) {
         audience: process.env.CLIENT_ID
     });
     const payload = ticket.getPayload();
-    const userid = payload['sub'];
+    // const userid = payload['sub'];
 
     return {
         nombre: payload.name,
