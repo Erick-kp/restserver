@@ -87,7 +87,8 @@ app.post('/producto', [verificaToken, verificaAdmin_Role], (req, res) => {
         precio: body.precio,
         descripcion: body.descripcion,
         categoria: body.categoria,
-        usuario: req.usuario._id
+        usuario: req.usuario._id,
+        img: body.imagen
     })
 
     producto.save((err, productoDB) => {
